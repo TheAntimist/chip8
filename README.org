@@ -44,3 +44,7 @@ Options:
   --quirky                              Enable quirky mode, changes behaviour
                                         of 8xy6, 8xyE, Fx55, and Fx65 opcodes.
 #+END_SRC
+* Screenshots
+
+[[https://raw.githubusercontent.com/TheAntimist/chip8/master/images/test.png]]
+[[https://raw.githubusercontent.com/TheAntimist/chip8/master/images/tetris.png]]
