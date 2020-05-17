@@ -1,0 +1,46 @@
+#+TITLE: Chip-8 Emulator
+#+OPTIONS: showall indent
+
+* Overview
+  This repository contains code in C++ for the Chip-8 emulator implementation.
+
+* Prerequisites
+  The following libraries have been used:
+   - [[https://wiki.libsdl.org/][SDL 2 (v2.0.8)]] : For the OpenGL display of the emulator
+   - [[https://www.boost.org/doc/libs/1_65_0/doc/html/program_options.html][Boost Program Options v1.65]] : For the Commandline option parsing
+* Building
+A make file has been provided for building, you can either run:
+
+#+BEGIN_SRC bash
+make
+#+END_SRC
+
+or
+
+#+BEGIN_SRC bash
+g++ -std=c++17 -Wall chip.cc chip.hpp -o chip  -lSDL2 -I/usr/include/SDL2 -D_REENTRANT -lboost_program_options
+#+END_SRC
+* Execution
+
+Refer to the below command line options for executing:
+
+#+BEGIN_SRC
+> ./chip --help
+Usage: ./chip [options] input-file
+Options:
+  -h [ --help ]                         produce help message
+  --delay arg (=1)                      Set the program delay cycle in
+                                        milliseconds
+  -d [ --color-disabled ] arg (=ff2d9bc8)
+                                        Color set when pixels are disabled. In
+                                        GBR
+  -e [ --color-enabled ] arg (=ff14dce6)
+                                        Color set when pixels are disabled. In
+                                        BGR
+  --scale arg (=20)                     Scale the SDL window size by this
+                                        amount. Default is 20.
+  --input-file arg                      Input Chip-8 file to execute
+  -v [ --version ]                      print version string
+  --quirky                              Enable quirky mode, changes behaviour
+                                        of 8xy6, 8xyE, Fx55, and Fx65 opcodes.
+#+END_SRC
